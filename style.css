@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background-color: lightcyan;
+}
+
+.input-form{
+    border: 1px solid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+    gap: 10px;
+    margin-right: 100px;
+    max-width: fit-content;
+}
+
+.rightBox button {
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.container img {
+    width: 500px;
+}
+

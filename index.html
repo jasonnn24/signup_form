@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
    <div class="container">
         <div class="imageContainer">
-            <img src="mog.jpg" alt="chin jung woo">
+            <img src="media/mog.jpg" alt="chin jung woo">
             <h1 class="imageText">Sung Chin Woo</h1>
         </div>
         <div class="rightBox">
@@ -24,60 +25,80 @@
                     <p>You're one step closer to aura.</p>
                     <div class="inputs">
                         <div>
-                            <label for="firstName">First Name</label>
+                            <label for="firstName">FIRST NAME</label>
                             <input
                             type="text"
                             id="firstName"
+                            placeholder="John"
+                            required
                             >
                         </div>
 
                         <div>
-                            <label for="lastName">Last Name</label>
+                            <label for="lastName">LAST NAME</label>
                             <input
                             type="text"
                             id="lastName"
+                            placeholder="Doe"
+                            required
                             >
                         </div>
 
                         <div>
-                            <label for="email">Email</label>
+                            <label for="email">EMAIL</label>
                             <input
                             type="text"
                             id="email"
+                            placeholder="SungChinWoo@solo.com"
+                            required
                             >
                         </div>
 
                         <div>
-                            <label for="phone">Phone Num.</label>
+                            <label for="phone" >PHONE NUM.</label>
                             <input
                             type="text"
                             id="phone"
+                            min="10"
+                            max="11"
+                            onkeypress="validate(event)"
+                            placeholder="012-3456789"
+                            required
                             >
                         </div>
 
                          <div>
-                            <label for="">Password</label>
+                            <label for="">PASSWORD</label>
                             <input
                             type="text"
                             id="password"
+                            placeholder="..."
+                            required
                             >
                         </div>
 
                         <div>
-                            <label for="">Confirm Password</label>
+                            <label for="">CONFIRM PASSWORD</label>
                             <input
                             type="text"
                             id="confirmPassword"
+                            placeholder="..."
+                            required
                             >
                         </div>
-
-                        
                     </div>
-                    
+
+                    <div id="passwordReminder">
+                        <h3>Password must contain the following:</h3>
+                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                    </div>
                 </div>
                 
                 <div class="bottomText">
-                    <button>Create Account</button>
+                    <button type="submit">Create Account</button>
                     <p>Already have an account? <a href="">Log In</a></p> 
                 </div>    
                 </form>

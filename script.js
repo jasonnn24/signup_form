@@ -1,14 +1,18 @@
 var passwordInput = document.getElementById('password')
 var phoneInput = document.getElementById('phone')
 
+var letter = document.getElementById('letter')
+var capital = document.getElementById('capital')
+var number = document.getElementById('number')
+var length = document.getElementById('length')
+
+// allow ONLY numbers in text input
 function validate(evt) {
   var theEvent = evt || window.event;
 
-  // Handle paste
   if (theEvent.type === 'paste') {
       key = event.clipboardData.getData('text/plain');
   } else {
-  // Handle key press
       var key = theEvent.keyCode || theEvent.which;
       key = String.fromCharCode(key);
   }
@@ -29,11 +33,9 @@ passwordInput.onblur = function() {
 
 passwordInput.addEventListener('input', () => {
     const value = passwordInput.value;
-
 })
 
 passwordInput.onkeyup = function() {
-  // Validate lowercase letters
   var lowerCaseLetters = /[a-z]/g;
   if(passwordInput.value.match(lowerCaseLetters)) {  
     letter.classList.remove("invalid");
@@ -43,7 +45,6 @@ passwordInput.onkeyup = function() {
     letter.classList.add("invalid");
   }
   
-  // Validate capital letters
   var upperCaseLetters = /[A-Z]/g;
   if(passwordInput.value.match(upperCaseLetters)) {  
     capital.classList.remove("invalid");
@@ -53,7 +54,6 @@ passwordInput.onkeyup = function() {
     capital.classList.add("invalid");
   }
 
-  // Validate numbers
   var numbers = /[0-9]/g;
   if(passwordInput.value.match(numbers)) {  
     number.classList.remove("invalid");
@@ -62,10 +62,4 @@ passwordInput.onkeyup = function() {
     number.classList.remove("valid");
     number.classList.add("invalid");
   }
-  
 }
-
-phoneInput.onkeyup = function() {
-
-}
-

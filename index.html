@@ -47,7 +47,7 @@
                         <div>
                             <label for="email">EMAIL</label>
                             <input
-                            type="text"
+                            type="email"
                             id="email"
                             placeholder="SungChinWoo@solo.com"
                             required
@@ -57,10 +57,10 @@
                         <div>
                             <label for="phone" >PHONE NUM.</label>
                             <input
-                            type="text"
+                            type="tel"
                             id="phone"
-                            min="10"
-                            max="11"
+                            minlength="9"
+                            maxlength="15"
                             onkeypress="validate(event)"
                             placeholder="012-3456789"
                             required
